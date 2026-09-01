@@ -1,0 +1,457 @@
+{
+  "metadata": {
+    "home": { "title": "Coledia – Connecting Knowledge. Empowering Futures.", "description": "La plataforma moderna para clubes, asociaciones y pequeños equipos. Cursos, comunidad, eventos en vivo y documentos – a precio justo." },
+    "about": { "title": "Nosotros – La historia detrás de Coledia", "description": "Coledia es un producto de Wiesmann Solutions Engineering. Construido por un ingeniero convencido de que los clubes pequeños no deberían pagar precios de empresa." },
+    "features": { "title": "Funciones – Cursos, Comunidad, Eventos en vivo y más", "description": "Descubre los módulos de Coledia: cursos, feed comunitario, eventos en vivo, documentos y chat – todo lo que tu club necesita." },
+    "pricing": { "title": "Precios – Planes justos para clubes y pequeños equipos", "description": "Precios transparentes para clubes, asociaciones y pequeñas empresas. Sin costes ocultos, sin contratos de empresa." },
+    "contact": { "title": "Contacto – Hablemos", "description": "¿Preguntas sobre Coledia? Escríbenos – respondemos personalmente, no mediante sistemas de tickets." }
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "features": "Funciones",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "cta": "Empezar",
+    "toggleMenu": "Alternar menú"
+  },
+  "common": {
+    "tagline": "connecting knowledge. empowering futures.",
+    "learnMore": "Saber más",
+    "perMonth": "/mes",
+    "popular": "Elección justa",
+    "year": "Año",
+    "language": "Idioma"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "toggle": "Cambiar tema"
+  },
+  "home": {
+    "hero": {
+      "badge": "Hecho para clubes, equipos y pequeñas empresas",
+      "titleA": "Connecting Knowledge.",
+      "titleB": "Empowering Futures.",
+      "subtitle": "Coledia reúne aprendizaje, comunidad y organización en una plataforma moderna – sin precios de empresa.",
+      "ctaPrimary": "Empezar gratis",
+      "ctaSecondary": "Ver cómo funciona",
+      "stat1Value": "120+",
+      "stat1Label": "Clubes y equipos a bordo",
+      "stat2Value": "8k",
+      "stat2Label": "Miembros activos",
+      "stat3Value": "98%",
+      "stat3Label": "Nos recomiendan"
+    },
+    "pitch": {
+      "kicker": "¿Por qué Coledia?",
+      "title": "Hecho por personas, para clubes y equipos",
+      "lead": "La mayoría del software para clubes parece hecho para grandes empresas – caro, rígido y sobrecargado. Coledia es diferente.",
+      "point1Title": "Personal, no anónimo",
+      "point1Text": "Hablas con el ingeniero que construye el producto. Sin colas de tickets, sin call centers.",
+      "point2Title": "Precio justo, sin contratos",
+      "point2Text": "Los clubes pequeños no deberían pagar precios de empresa. Un precio transparente, cancelable cada mes.",
+      "point3Title": "Moderno y agradable",
+      "point3Text": "Redondeado, rápido y realmente divertido de usar – para miembros de todas las edades."
+    },
+    "showcase": {
+      "kicker": "Vista previa de la app",
+      "title": "Un hogar para el conocimiento y la comunidad",
+      "subtitle": "Cursos, estadísticas, eventos en vivo y documentos – todo lo que tus miembros necesitan, hermosamente organizado.",
+      "liveLabel": "Vista previa del panel"
+    },
+    "features": {
+      "kicker": "Funciones",
+      "title": "Todo lo que tu club necesita",
+      "subtitle": "Seis módulos que crecen contigo – empieza pequeño, amplía cuando quieras.",
+      "f1Title": "Cursos y Aprendizaje",
+      "f1Text": "Crea cursos estructurados con vídeos, archivos y seguimiento de progreso – para formaciones, talleres y onboarding.",
+      "f2Title": "Feed Comunitario",
+      "f2Text": "Noticias, anuncios y debates en un solo lugar. Tus miembros permanecen conectados sin grupos de chat desperdigados.",
+      "f3Title": "Eventos en Vivo",
+      "f3Text": "Planifica y dirige sesiones en vivo, entrenamientos y asambleas – con recordatorios y registro de asistencia.",
+      "f4Title": "Documentos",
+      "f4Text": "Estatutos, actas y formularios – organizados, versionados y siempre localizables para cada miembro.",
+      "f5Title": "Chat y Mensajería",
+      "f5Text": "Mensajes directos y canales de grupo con roles y permisos. Adiós a los grupos de WhatsApp caóticos.",
+      "f6Title": "Progreso y Análisis",
+      "f6Text": "Hermosos paneles muestran la participación, el progreso de los cursos y la actividad de los miembros."
+    },
+    "cta": {
+      "title": "¿Listo para llevar tu club al futuro?",
+      "subtitle": "Configurado en minutos. Sin tarjeta, sin contratos – solo un hogar mejor para tu comunidad.",
+      "button": "Empezar gratis",
+      "note": "Gratis para siempre para clubes de hasta 50 miembros."
+    }
+  },
+  "about": {
+    "kicker": "Entre bastidores",
+    "title": "La historia detrás de Coledia",
+    "lead": "Coledia nació de una sencilla frustración: grandes clubes gestionándose con hojas de cálculo y chats interminables – porque el software de verdad era demasiado caro.",
+    "founderTitle": "La persona detrás del producto",
+    "founderName": "Matthias Wiesmann",
+    "founderRole": "Fundador e Ingeniero de Software – Wiesmann Solutions Engineering",
+    "founderText1": "Soy desarrollador de software en Suiza. Cuando el club de boxeo en el que estaba luchaba con herramientas que costaban cientos al mes y seguían ancladas en 2010, vi la necesidad de digitalizar sus operaciones y empecé a construir Coledia en las noches y fines de semana.",
+    "founderText2": "Coledia no es una startup con capital riesgo y un plan de salida. Es un producto de Wiesmann Solutions Engineering – una empresa unipersonal. Cada decisión se toma pensando en los usuarios, no en inversores.",
+    "founderCta": "Contactar personalmente",
+    "missionBadge": "Soporte personal incluido",
+    "timeline": {
+      "title": "El camino hasta aquí",
+      "m1Year": "2023",
+      "m1Title": "La idea",
+      "m1Text": "Primeros bocetos tras una asamblea del club de boxeo donde el caos de hojas de cálculo del tesorero dejó clara la necesidad de digitalización.",
+      "m2Year": "2024",
+      "m2Title": "Prototipo y primer feedback",
+      "m2Text": "Un prototipo funcional se prueba con miembros reales – y se remodela según lo que de verdad necesitan.",
+      "m3Year": "2026",
+      "m3Title": "Fase piloto",
+      "m3Text": "Coledia entra en fase piloto – los primeros clubes dan forma al producto con feedback real que impulsa mejoras futuras. Únete ahora y tu input influirá directamente en lo que se desarrolle a continuación."
+    },
+    "values": {
+      "kicker": "Valores y Visión",
+      "title": "Por qué los clubes no deberían pagar precios de empresa",
+      "v1Title": "Justo por defecto",
+      "v1Text": "Las organizaciones de voluntarios merecen el mismo software moderno que las grandes empresas – a un precio que encaje con la caja de un club.",
+      "v2Title": "Soporte personal",
+      "v2Text": "Las preguntas llegan directamente a la persona que construye Coledia. Respuestas en 24 horas, no en semanas.",
+      "v3Title": "Calidad suiza y privacidad",
+      "v3Text": "Alojado con cuidado, construido para durar y respetuoso con los datos de tus miembros – sin publicidad, sin venta de datos."
+    },
+    "cta": {
+      "title": "¿Quieres saber si Coledia encaja con tu club?",
+      "subtitle": "Reserva un café virtual gratuito de 20 minutos – sin guion de ventas, solo respuestas honestas.",
+      "button": "Tomemos un café"
+    }
+  },
+  "featuresPage": {
+    "kicker": "Módulos",
+    "title": "Todo en un solo lugar",
+    "lead": "Cada módulo resuelve un problema real que los clubes viven a diario. Usa uno, úsalos todos – funcionan muy bien juntos.",
+    "tabs": {
+      "dashboard": "Panel",
+      "courses": "Cursos",
+      "news": "Noticias",
+      "events": "Eventos en vivo",
+      "documents": "Documentos",
+      "chat": "Chat"
+    },
+    "dashboard": {
+      "title": "Panel & Vista general",
+      "text": "Una vista clara de todo lo que pasa en tu club. Sigue el progreso de cursos, tiempo de visualización, miembros en línea y estadísticas clave – todo en un solo lugar.",
+      "b1": "Estadísticas en vivo: en curso, completados, tiempo de visualización",
+      "b2": "Gráficos visuales para tiempo invertido y distribución de cursos",
+      "b3": "Acceso rápido a actividad reciente y progreso de cursos"
+    },
+    "courses": {
+      "title": "Cursos y Rutas de Aprendizaje",
+      "text": "Estructura el conocimiento en módulos y lecciones. Cursos en vídeo con miniaturas 16:9, filtros por categoría y seguimiento de progreso – los miembros aprenden a su ritmo.",
+      "b1": "Cuadrícula de cursos en 4 columnas con miniaturas 16:9",
+      "b2": "Filtros por categoría y estado con búsqueda",
+      "b3": "Seguimiento de progreso y certificados"
+    },
+    "news": {
+      "title": "Noticias & Feed Comunitario",
+      "text": "Un feed tipo Twitter para anuncios, novedades y debates. Los miembros pueden dar like, comentar y responder en hilos anidados.",
+      "b1": "Publicaciones con likes, comentarios y respuestas anidadas",
+      "b2": "Filtrado por etiquetas y búsqueda",
+      "b3": "Interacción comunitaria en tiempo real"
+    },
+    "events": {
+      "title": "Eventos en Vivo",
+      "text": "Planifica entrenamientos, asambleas y streams en vivo. Los miembros ven próximos eventos con miniaturas, se unen con un clic y exploran grabaciones de eventos pasados.",
+      "b1": "Eventos próximos y pasados con filtros por categoría",
+      "b2": "Indicadores en vivo y unión con un clic",
+      "b3": "Archivo de grabaciones de eventos pasados"
+    },
+    "documents": {
+      "title": "Documentos y Archivos",
+      "text": "Una interfaz tipo explorador para estatutos, actas y formularios. Navega por carpetas, filtra por tipo de archivo y busca en todo.",
+      "b1": "Navegación por árbol de carpetas con filtros de tipo de archivo",
+      "b2": "Búsqueda en todos los documentos",
+      "b3": "Permisos finos por carpeta"
+    },
+    "chat": {
+      "title": "Chat y Mensajería",
+      "text": "Canales de grupo y mensajes directos en un solo lugar. Envía texto, emojis e imágenes – con roles y permisos que sustituyen a las apps caóticas.",
+      "b1": "Canales y mensajes directos con estado en línea",
+      "b2": "Subida de emojis e imágenes",
+      "b3": "Acceso basado en roles y badges de no leídos"
+    },
+    "admin": {
+      "title": "Panel Admin & Analytics",
+      "text": "Control total sobre la configuración de tu club – gestiona miembros, roles, permisos y cada módulo desde un solo lugar. Analíticas detalladas muestran exactamente cómo interactúa cada miembro.",
+      "b1": "Gestión de miembros con roles y permisos",
+      "b2": "Analíticas por usuario: progreso, actividad y engagement",
+      "b3": "Configurar cursos, eventos, documentos y ajustes de chat"
+    },
+    "payments": {
+      "title": "Pagos & Venta de cursos",
+      "text": "Vende cursos con la integración de Stripe incorporada – u ofrécelos gratis. Los miembros pagan de forma segura sin salir de la plataforma, y sigues los ingresos de un vistazo.",
+      "b1": "Integración de Stripe para pagos seguros",
+      "b2": "Cursos gratis o de pago – tú decides por curso",
+      "b3": "Panel de ingresos con resumen de transacciones"
+    },
+    "cta": {
+      "title": "Velo en acción",
+      "subtitle": "La mejor forma de entender Coledia es probarlo con tu propio club.",
+      "button": "Empezar gratis"
+    }
+  },
+  "pricing": {
+    "kicker": "Precios",
+    "title": "Precios justos, sin sorpresas",
+    "lead": "Planes transparentes para clubes, asociaciones y pequeñas empresas. Sin costes ocultos, sin permanencia anual.",
+    "note": "Todos los precios en CHF, por club, IVA incluido. Cancelable cada mes.",
+    "tier1": {
+      "name": "Starter",
+      "price": "0",
+      "description": "Para clubes pequeños que empiezan en la organización digital.",
+      "f1": "Hasta 50 miembros",
+      "f2": "Feed comunitario y eventos",
+      "f3": "Área pública de documentos",
+      "f4": "Soporte comunitario"
+    },
+    "tier2": {
+      "name": "Club",
+      "price": "29",
+      "description": "La elección justa para la mayoría de clubes.",
+      "f1": "Hasta 250 miembros",
+      "f2": "Cursos y seguimiento de progreso",
+      "f3": "Documentos y chat ilimitados",
+      "f4": "Llamada personal de onboarding",
+      "f5": "Soporte prioritario"
+    },
+    "tier3": {
+      "name": "Organización",
+      "price": "69",
+      "description": "Para asociaciones grandes y pequeñas empresas.",
+      "f1": "Miembros ilimitados",
+      "f2": "Varios grupos y sub-clubes",
+      "f3": "Branding personalizado",
+      "f4": "Acceso API",
+      "f5": "Persona de contacto dedicada"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q1": "¿Coledia es realmente gratis para clubes pequeños?",
+      "a1": "Sí. Los clubes de hasta 50 miembros usan el plan Starter gratis – para siempre, no como prueba. Crecemos cuando tú creces.",
+      "q2": "¿Puedo cancelar en cualquier momento?",
+      "a2": "Por supuesto. Todos los planes de pago son cancelables mensualmente. Tus datos siguen siendo exportables incluso tras cancelar.",
+      "q3": "¿Quién está detrás de Coledia?",
+      "a3": "Coledia es un producto de Wiesmann Solutions Engineering, una empresa unipersonal suiza. Trabajas directamente con el ingeniero que lo construye.",
+      "q4": "¿Dónde se alojan nuestros datos?",
+      "a4": "Los datos se alojan en Europa con estrictos estándares de privacidad. Nunca vendemos datos de miembros y no hay rastreo de terceros.",
+      "q5": "¿Nos ayudáis con la migración?",
+      "a5": "Sí – el plan Club incluye una llamada personal de onboarding y ayudamos a trasladar documentos y listas de miembros existentes."
+    },
+    "cta": {
+      "title": "¿Aún con dudas?",
+      "subtitle": "Hablemos honestamente de la situación de tu club – sin discurso de ventas.",
+      "button": "Contáctanos"
+    }
+  },
+  "contact": {
+    "kicker": "Contacto",
+    "title": "Hablemos de tu club",
+    "lead": "Escríbele directamente a la persona que construye Coledia. Sin tickets, sin bots.",
+    "form": {
+      "name": "Tu nombre",
+      "email": "E-mail",
+      "organization": "Club / organización",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu club y qué te gustaría mejorar…",
+      "coffee": "Quiero un café virtual gratuito de 20 min",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "successTitle": "¡Mensaje enviado!",
+      "successText": "Gracias por escribir. Recibirás una respuesta personal en 24 horas.",
+      "errorText": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente por e-mail.",
+      "validation": {
+        "name": "Por favor, introduce tu nombre (mín. 2 caracteres).",
+        "email": "Por favor, introduce una dirección de e-mail válida.",
+        "message": "Por favor, escribe al menos 10 caracteres."
+      }
+    },
+    "direct": {
+      "title": "Contáctanos directamente",
+      "name": "Matthias Wiesmann",
+      "role": "Fundador – Wiesmann Solutions Engineering",
+      "email": "hello@coledia.com",
+      "response": "Responde personalmente, normalmente en 24h",
+      "coffeeTitle": "¿Prefieres una llamada rápida?",
+      "coffeeText": "Reserva un café virtual gratuito de 20 minutos – ideal si no estás seguro de si Coledia encaja con tu club."
+    }
+  },
+  "footer": {
+    "description": "La plataforma moderna y de precio justo para clubes, asociaciones y pequeños equipos.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "productFeatures": "Funciones",
+    "productPricing": "Precios",
+    "productDemo": "Demo en directo",
+    "companyAbout": "Nosotros",
+    "companyWiesmann": "Wiesmann Solutions Engineering",
+    "companyContact": "Contacto",
+    "legalImprint": "Aviso legal",
+    "legalPrivacy": "Privacidad",
+    "bannerTitle": "Software con rostro.",
+    "bannerText": "Coledia está construido y atendido por una persona real que ama ayudar a clubes – no por una empresa anónima.",
+    "productOf": "Un producto de Wiesmann Solutions Engineering",
+    "rights": "Todos los derechos reservados."
+  },
+  "legal": {
+    "imprint": {
+      "title": "Aviso legal",
+      "company": "Wiesmann Solutions Engineering",
+      "owner": "Propietario: Matthias Wiesmann",
+      "addressLine": "Dirección: [Calle, CP, Ciudad], Suiza",
+      "email": "E-mail: hello@coledia.com",
+      "web": "Web: wiesmann-se.ch",
+      "note": "Este aviso legal es provisional y se finalizará antes del lanzamiento público."
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "p1Title": "Nuestro principio",
+      "p1Text": "Recogemos los mínimos datos posibles y nunca vendemos ni compartimos datos de miembros con terceros. Sin publicidad, sin cookies innecesarias.",
+      "p2Title": "Alojamiento y procesamiento",
+      "p2Text": "Los datos se alojan en Europa según los estándares suizos y europeos de protección de datos. La información detallada sobre procesamiento, plazos y tus derechos se publicará aquí antes del lanzamiento.",
+      "p3Title": "Contacto",
+      "p3Text": "Para preguntas de privacidad: hello@coledia.com",
+      "note": "Esta política de privacidad es provisional y se finalizará antes del lanzamiento público."
+    }
+  },
+  "showcase": {
+    "sidebar": {
+      "courses": "Cursos",
+      "dashboard": "Panel",
+      "news": "Noticias",
+      "events": "Eventos en vivo",
+      "chat": "Chat",
+      "documents": "Documentos"
+    },
+    "sections": {
+      "coursesHeader": "Resumen de cursos",
+      "newsHeader": "Últimas noticias",
+      "eventsHeader": "Próximos eventos en vivo",
+      "chatHeader": "Chat del club",
+      "docsHeader": "Biblioteca de documentos",
+      "join": "Unirse",
+      "liveNow": "En vivo",
+      "pinned": "Fijado",
+      "new": "Nuevo",
+      "allFiles": "Todos los archivos",
+      "messagePlaceholder": "Escribe un mensaje…",
+      "search": "Buscar…",
+      "all": "Todos",
+      "noResults": "Sin resultados",
+      "upcoming": "Próximos",
+      "past": "Pasados",
+      "recording": "Grabación",
+      "channels": "Canales",
+      "direct": "Directos",
+      "online": "en línea",
+      "attach": "Subir imagen",
+      "emoji": "Añadir emoji"
+    },
+    "news": {
+      "n1": "Asamblea anual – el acta está disponible",
+      "n2": "Fin de semana de formación: inscripción abierta",
+      "n3": "Nuevos mentores para la temporada de invierno",
+      "tag1": "#vida-del-club",
+      "tag2": "#eventos",
+      "tag3": "#cursos",
+      "p1": "El acta de la asamblea está disponible 📄 – ¡gracias por la gran participación! 🙌",
+      "p2": "La inscripción al fin de semana de formación está abierta ⛷️ – ¡quien llega primero gana!",
+      "p3": "Bienvenidos a nuestros dos nuevos mentores para la temporada de invierno ❄️👋",
+      "p4": "Nueva estructura en la biblioteca de documentos – todo sobre finanzas en un solo lugar 📊",
+      "c1": "Gran resumen, ¡gracias! 🙏",
+      "c2": "¿Hasta cuándo se puede inscribir uno?",
+      "c3": "¡Genial, me apunto! 🙋",
+      "c4": "Hasta el viernes a las 18:00 ⏰",
+      "c5": "¡Igual por aquí! 😊"
+    },
+    "events": {
+      "e1Title": "Entrenamiento del club – sesión 4",
+      "e1Meta": "Viernes 19:00",
+      "e2Title": "Asamblea general – preguntas y respuestas",
+      "e2Meta": "Martes 18:30",
+      "e3Title": "Horario de consulta de la junta",
+      "e3Meta": "Sábado 10:00",
+      "e4Title": "Webinar de inicio de temporada",
+      "e4Meta": "28.08",
+      "e5Title": "Noche de introducción para voluntarios",
+      "e5Meta": "15.08",
+      "catTraining": "Formación",
+      "catGeneral": "General",
+      "catSocial": "Eventos"
+    },
+    "chat": {
+      "ch1": "General",
+      "ch2": "Entrenadores",
+      "ch3": "Voluntarios",
+      "m1": "Los documentos del viernes están subidos",
+      "m2": "¡Perfecto, gracias!",
+      "a1": "Sarah M.",
+      "a2": "Tú",
+      "dm1": "¡Hola! ¿Viste el nuevo acta? 😊",
+      "dm2": "¡Sí, quedó genial!",
+      "send": "Enviar"
+    },
+    "docs": {
+      "d1": "Estatutos.pdf",
+      "d2": "Acta – abril.pdf",
+      "d3": "budget-2025.xlsx",
+      "d4": "logo-pack.zip",
+      "fBoard": "Junta",
+      "fMeetings": "Reuniones",
+      "fFinance": "Finanzas"
+    },
+    "stats": {
+      "inProgress": "Cursos en progreso",
+      "completed": "Cursos completados",
+      "watchTime": "Tiempo de aprendizaje",
+      "online": "Miembros en línea",
+      "hours": "18h 20m"
+    },
+    "timeSpending": {
+      "title": "Tiempo de aprendizaje",
+      "total": "18h 20m",
+      "tooltip": "6h 25m esta semana"
+    },
+    "courseStats": {
+      "title": "Estadísticas de cursos",
+      "total": "Cursos totales",
+      "complete": "Completado",
+      "inProgress": "En progreso",
+      "notStarted": "Sin empezar"
+    },
+    "courseStatus": {
+      "title": "Estado de cursos",
+      "viewAll": "Ver todo",
+      "colCourse": "Curso",
+      "colProgress": "Progreso",
+      "colChapter": "Capítulos",
+      "colAction": "Acción",
+      "play": "Reproducir",
+      "complete": "% completado"
+    },
+    "cards": {
+      "categoryUiUx": "Gestión de club",
+      "categoryTraining": "Formación",
+      "c1Title": "Introducción al diseño de producto",
+      "c2Title": "Formación de voluntarios",
+      "c3Title": "Dominio de prompts para equipos",
+      "c4Title": "Crear una base de conocimiento",
+      "c5Title": "Conceptos de patrocinio",
+      "c6Title": "Redes sociales para clubes",
+      "c7Title": "Seguridad en eventos",
+      "c8Title": "Membresías digitales",
+      "price": "CHF {price}",
+      "chapters": "{count} capítulos",
+      "completeLabel": "{value}% completado",
+      "tutor": "Coach de club"
+    }
+  }
+}
