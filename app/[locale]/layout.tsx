@@ -35,6 +35,13 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(BASE_URL),
+    icons: {
+      icon: {
+        url: "/coledia-mark.svg",
+        type: "image/svg+xml",
+        sizes: "any",
+      },
+    },
     title: {
       default: t("title"),
       template: "%s – coledia.com",
