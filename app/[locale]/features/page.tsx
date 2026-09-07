@@ -18,14 +18,22 @@ export async function generateMetadata({
 }
 
 const MODULES = ["dashboard", "courses", "news", "events", "chat", "documents"] as const;
+type ModuleKey = (typeof MODULES)[number];
 
 export default async function FeaturesPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ module?: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const { module } = await searchParams;
+  const defaultTab: ModuleKey = (MODULES as readonly string[]).includes(module ?? "")
+    ? (module as ModuleKey)
+    : "courses";
 
   const t = await getTranslations("featuresPage");
 
@@ -46,7 +54,7 @@ export default async function FeaturesPage({
       <section className="px-4 py-16">
         <div className="mx-auto max-w-5xl">
           <Reveal>
-            <Tabs defaultValue="courses">
+            <Tabs defaultValue={defaultTab}>
               <div className="flex justify-center">
                 <TabsList>
                   {MODULES.map((m) => (

@@ -88,6 +88,7 @@ export default async function HomePage({
           kicker: features("kicker"),
           title: features("title"),
           subtitle: features("subtitle"),
+          learnMore: features("learnMore"),
           items: [
             { title: features("f1Title"), text: features("f1Text") },
             { title: features("f2Title"), text: features("f2Text") },
@@ -95,6 +96,9 @@ export default async function HomePage({
             { title: features("f4Title"), text: features("f4Text") },
             { title: features("f5Title"), text: features("f5Text") },
             { title: features("f6Title"), text: features("f6Text") },
+            { title: features("f7Title"), text: features("f7Text") },
+            { title: features("f8Title"), text: features("f8Text") },
+            { title: features("f9Title"), text: features("f9Text") },
           ],
         }}
       />

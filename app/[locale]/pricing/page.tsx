@@ -1,18 +1,16 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion/reveal";
+import { Reveal } from "@/components/motion/reveal";
 import { CtaBanner } from "@/components/home/cta-banner";
-import { cn } from "@/lib/utils";
+import { PricingSection } from "@/components/home/pricing-section";
 
 export async function generateMetadata({
   params,
@@ -24,12 +22,6 @@ export async function generateMetadata({
   return { title: t("title"), description: t("description") };
 }
 
-const TIERS = [
-  { key: "tier1", features: 4 },
-  { key: "tier2", features: 5, featured: true },
-  { key: "tier3", features: 5 },
-] as const;
-
 export default async function PricingPage({
   params,
 }: {
@@ -38,93 +30,212 @@ export default async function PricingPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("pricing");
-  const common = await getTranslations("common");
+  const pricing = await getTranslations("home.pricing");
+  const faq = await getTranslations("pricing.faq");
+  const cta = await getTranslations("pricing.cta");
 
   return (
     <>
-      <section className="px-4 pt-16 sm:pt-24">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-widest text-teal-brand">
-            {t("kicker")}
-          </p>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
-            {t("title")}
-          </h1>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{t("lead")}</p>
-        </Reveal>
-      </section>
-
-      <section className="px-4 py-16">
-        <StaggerGroup className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-          {TIERS.map((tier) => (
-            <StaggerItem key={tier.key}>
-              <div
-                className={cn(
-                  "relative flex h-full flex-col rounded-3xl border bg-card p-8 shadow-sm",
-                  "featured" in tier
-                    ? "border-teal-brand shadow-xl shadow-teal-brand/10"
-                    : "border-border"
-                )}
-              >
-                {"featured" in tier && (
-                  <Badge variant="orange" className="absolute -top-3 right-6">
-                    {common("popular")}
-                  </Badge>
-                )}
-                <h2 className="text-lg font-bold">{t(`${tier.key}.name`)}</h2>
-                <p className="mt-1.5 text-sm text-muted-foreground">
-                  {t(`${tier.key}.description`)}
-                </p>
-                <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold tracking-tight">
-                    CHF {t(`${tier.key}.price`)}
-                  </span>
-                  <span className="text-sm text-muted-foreground">{common("perMonth")}</span>
-                </div>
-                <ul className="mt-6 flex flex-1 flex-col gap-3">
-                  {Array.from({ length: tier.features }, (_, i) => i + 1).map((n) => (
-                    <li key={n} className="flex items-start gap-3 text-sm">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-brand/12 text-green-brand">
-                        <Check className="h-3 w-3" strokeWidth={3} />
-                      </span>
-                      {t(`${tier.key}.f${n}`)}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className={cn(
-                    "mt-8 inline-flex h-12 items-center justify-center rounded-full text-sm font-semibold transition-all hover:-translate-y-0.5",
-                    "featured" in tier
-                      ? "bg-orange-brand text-white shadow-lg shadow-orange-brand/25 hover:bg-[#d14a0a]"
-                      : "border-2 border-border hover:bg-muted"
-                  )}
-                >
-                  {t("cta.button")}
-                </Link>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-        <Reveal className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground">{t("note")}</p>
-        </Reveal>
-      </section>
+      <PricingSection
+        labels={{
+          kicker: pricing("kicker"),
+          title: pricing("title"),
+          subtitle: pricing("subtitle"),
+          monthly: pricing("monthly"),
+          annual: pricing("annual"),
+          saveNote: pricing("saveNote"),
+          perMonth: pricing("perMonth"),
+          billedAnnually: pricing("billedAnnually"),
+          popular: pricing("popular"),
+          ctaButton: pricing("ctaButton"),
+          tiers: [
+            {
+              name: pricing("tier1.name"),
+              priceMonthly: pricing("tier1.priceMonthly"),
+              priceAnnual: pricing("tier1.priceAnnual"),
+              description: pricing("tier1.description"),
+              features: [
+                pricing("tier1.f1"),
+                pricing("tier1.f2"),
+                pricing("tier1.f3"),
+                pricing("tier1.f4"),
+              ],
+            },
+            {
+              name: pricing("tier2.name"),
+              priceMonthly: pricing("tier2.priceMonthly"),
+              priceAnnual: pricing("tier2.priceAnnual"),
+              description: pricing("tier2.description"),
+              features: [
+                pricing("tier2.f1"),
+                pricing("tier2.f2"),
+                pricing("tier2.f3"),
+                pricing("tier2.f4"),
+                pricing("tier2.f5"),
+              ],
+            },
+            {
+              name: pricing("tier3.name"),
+              priceMonthly: pricing("tier3.priceMonthly"),
+              priceAnnual: pricing("tier3.priceAnnual"),
+              description: pricing("tier3.description"),
+              features: [
+                pricing("tier3.f1"),
+                pricing("tier3.f2"),
+                pricing("tier3.f3"),
+                pricing("tier3.f4"),
+                pricing("tier3.f5"),
+              ],
+            },
+          ],
+          comparison: {
+            title: pricing("comparison.title"),
+            feature: pricing("comparison.feature"),
+            starter: pricing("comparison.starter"),
+            club: pricing("comparison.club"),
+            org: pricing("comparison.org"),
+            rows: [
+              {
+                label: pricing("comparison.r1Label"),
+                starter: pricing("comparison.r1Starter"),
+                club: pricing("comparison.r1Club"),
+                org: pricing("comparison.r1Org"),
+              },
+              {
+                label: pricing("comparison.r2Label"),
+                starter: pricing("comparison.r2Starter"),
+                club: pricing("comparison.r2Club"),
+                org: pricing("comparison.r2Org"),
+              },
+              {
+                label: pricing("comparison.r3Label"),
+                starter: pricing("comparison.r3Starter"),
+                club: pricing("comparison.r3Club"),
+                org: pricing("comparison.r3Org"),
+              },
+              {
+                label: pricing("comparison.r4Label"),
+                starter: pricing("comparison.r4Starter"),
+                club: pricing("comparison.r4Club"),
+                org: pricing("comparison.r4Org"),
+              },
+              {
+                label: pricing("comparison.r5Label"),
+                starter: pricing("comparison.r5Starter"),
+                club: pricing("comparison.r5Club"),
+                org: pricing("comparison.r5Org"),
+              },
+              {
+                label: pricing("comparison.r6Label"),
+                starter: pricing("comparison.r6Starter"),
+                club: pricing("comparison.r6Club"),
+                org: pricing("comparison.r6Org"),
+              },
+              {
+                label: pricing("comparison.r7Label"),
+                starter: pricing("comparison.r7Starter"),
+                club: pricing("comparison.r7Club"),
+                org: pricing("comparison.r7Org"),
+              },
+              {
+                label: pricing("comparison.r8Label"),
+                starter: pricing("comparison.r8Starter"),
+                club: pricing("comparison.r8Club"),
+                org: pricing("comparison.r8Org"),
+              },
+              {
+                label: pricing("comparison.r9Label"),
+                starter: pricing("comparison.r9Starter"),
+                club: pricing("comparison.r9Club"),
+                org: pricing("comparison.r9Org"),
+              },
+              {
+                label: pricing("comparison.r10Label"),
+                starter: pricing("comparison.r10Starter"),
+                club: pricing("comparison.r10Club"),
+                org: pricing("comparison.r10Org"),
+              },
+              {
+                label: pricing("comparison.r11Label"),
+                starter: pricing("comparison.r11Starter"),
+                club: pricing("comparison.r11Club"),
+                org: pricing("comparison.r11Org"),
+              },
+              {
+                label: pricing("comparison.r12Label"),
+                starter: pricing("comparison.r12Starter"),
+                club: pricing("comparison.r12Club"),
+                org: pricing("comparison.r12Org"),
+              },
+              {
+                label: pricing("comparison.r13Label"),
+                starter: pricing("comparison.r13Starter"),
+                club: pricing("comparison.r13Club"),
+                org: pricing("comparison.r13Org"),
+              },
+              {
+                label: pricing("comparison.r14Label"),
+                starter: pricing("comparison.r14Starter"),
+                club: pricing("comparison.r14Club"),
+                org: pricing("comparison.r14Org"),
+              },
+              {
+                label: pricing("comparison.r15Label"),
+                starter: pricing("comparison.r15Starter"),
+                club: pricing("comparison.r15Club"),
+                org: pricing("comparison.r15Org"),
+              },
+              {
+                label: pricing("comparison.r16Label"),
+                starter: pricing("comparison.r16Starter"),
+                club: pricing("comparison.r16Club"),
+                org: pricing("comparison.r16Org"),
+              },
+              {
+                label: pricing("comparison.r17Label"),
+                starter: pricing("comparison.r17Starter"),
+                club: pricing("comparison.r17Club"),
+                org: pricing("comparison.r17Org"),
+              },
+              {
+                label: pricing("comparison.r18Label"),
+                starter: pricing("comparison.r18Starter"),
+                club: pricing("comparison.r18Club"),
+                org: pricing("comparison.r18Org"),
+              },
+            ],
+          },
+        }}
+      />
 
       <section className="px-4 pb-8">
         <div className="mx-auto max-w-3xl">
           <Reveal className="mb-8 text-center">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-              {t("faq.title")}
+              {faq("title")}
             </h2>
           </Reveal>
           <Reveal>
             <Accordion type="single" collapsible className="flex flex-col gap-3">
               {[1, 2, 3, 4, 5].map((n) => (
                 <AccordionItem key={n} value={`q${n}`}>
-                  <AccordionTrigger>{t(`faq.q${n}`)}</AccordionTrigger>
-                  <AccordionContent>{t(`faq.a${n}`)}</AccordionContent>
+                  <AccordionTrigger>{faq(`q${n}`)}</AccordionTrigger>
+                  <AccordionContent>
+                    {n === 5 ? (
+                      <>
+                        {faq("a5Part1")}{" "}
+                        <Link
+                          href="/contact"
+                          className="font-semibold text-orange-brand hover:underline"
+                        >
+                          {faq("a5Link")}
+                        </Link>{" "}
+                        {faq("a5Part2")}
+                      </>
+                    ) : (
+                      faq(`a${n}`)
+                    )}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -134,9 +245,9 @@ export default async function PricingPage({
 
       <CtaBanner
         labels={{
-          title: t("cta.title"),
-          subtitle: t("cta.subtitle"),
-          button: t("cta.button"),
+          title: cta("title"),
+          subtitle: cta("subtitle"),
+          button: cta("button"),
           note: "",
         }}
       />

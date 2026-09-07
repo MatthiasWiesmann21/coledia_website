@@ -94,7 +94,7 @@ export function Hero({ labels }: { labels: HeroLabels }) {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="rounded-2xl border border-border bg-card px-6 py-4"
             >
-              <p className="text-brand-gradient text-2xl font-extrabold">{stat.value}</p>
+              <p className="text-[#1f78b4] dark:text-white text-2xl font-extrabold">{stat.value}</p>
               <p className="mt-1 text-xs font-medium text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
