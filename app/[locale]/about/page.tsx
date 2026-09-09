@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Coffee, Scale, ShieldCheck, Wrench } from "lucide-react";
 
+import { MarketingShell } from "@/components/layout/marketing-shell";
 import { Link } from "@/i18n/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -30,7 +31,7 @@ export default async function AboutPage({
   const t = await getTranslations("about");
 
   return (
-    <>
+    <MarketingShell>
       {/* Intro */}
       <section className="px-4 pt-16 sm:pt-24">
         <Reveal className="mx-auto max-w-3xl text-center">
@@ -129,6 +130,6 @@ export default async function AboutPage({
           note: "",
         }}
       />
-    </>
+    </MarketingShell>
   );
 }

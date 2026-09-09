@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
+import { MarketingShell } from "@/components/layout/marketing-shell";
 import { Hero } from "@/components/home/hero";
 import { PitchSection } from "@/components/home/pitch-section";
 import { FeatureGrid } from "@/components/home/feature-grid";
@@ -33,7 +34,7 @@ export default async function HomePage({
   const showcase = await getTranslations("home.showcase");
 
   return (
-    <>
+    <MarketingShell>
       <Hero
         labels={{
           badge: hero("badge"),
@@ -111,6 +112,6 @@ export default async function HomePage({
           note: cta("note"),
         }}
       />
-    </>
+    </MarketingShell>
   );
 }

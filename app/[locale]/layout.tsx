@@ -7,8 +7,6 @@ import type { ReactNode } from "react";
 
 import { routing } from "@/i18n/routing";
 import { Providers } from "@/components/layout/providers";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
 
 import "../globals.css";
 
@@ -84,11 +82,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} min-h-screen font-sans antialiased`}>
         <NextIntlClientProvider>
-          <Providers>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </Providers>
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>

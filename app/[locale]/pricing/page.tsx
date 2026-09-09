@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
+import { MarketingShell } from "@/components/layout/marketing-shell";
 import { Link } from "@/i18n/navigation";
 import {
   Accordion,
@@ -35,7 +36,7 @@ export default async function PricingPage({
   const cta = await getTranslations("pricing.cta");
 
   return (
-    <>
+    <MarketingShell>
       <PricingSection
         labels={{
           kicker: pricing("kicker"),
@@ -251,6 +252,6 @@ export default async function PricingPage({
           note: "",
         }}
       />
-    </>
+    </MarketingShell>
   );
 }

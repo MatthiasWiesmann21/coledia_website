@@ -1,0 +1,180 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String        @id @default(cuid())
+  email            String        @unique
+  emailVerified    Boolean       @default(false)
+  name             String?
+  image            String?
+  passwordHash     String?
+  twoFactorEnabled Boolean       @default(false)
+  twoFactorSecret  String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  ownerAccount     OwnerAccount?
+  profile          UserProfile?
+  memberships      Membership[]
+  sessions         Session[]
+  accounts         Account[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?   @db.Text
+  refreshToken          String?   @db.Text
+  idToken               String?   @db.Text
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?   @db.Text
+  password              String?   @db.Text
+  issuer                String?   @db.Text
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String   @db.Text
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+}
+
+model Tenant {
+  id                       String       @id @default(cuid())
+  subdomain                String       @unique
+  customDomain             String?      @unique
+  name                     String
+  status                   String       @default("active")
+  plan                     String       @default("starter")
+  stripeCustomerId         String?
+  stripeSubscriptionId     String?
+  currentPeriodEnd         DateTime?
+  stripeConnectedAccountId String?
+  stripeChargesEnabled     Boolean      @default(false)
+  createdAt                DateTime     @default(now())
+  updatedAt                DateTime     @updatedAt
+  container                Container?
+  branding                 Branding?
+  memberships              Membership[]
+
+  @@index([status])
+}
+
+model Membership {
+  id        String   @id @default(cuid())
+  userId    String
+  tenantId  String
+  role      String   @default("member")
+  joinedAt  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, tenantId])
+  @@index([tenantId])
+}
+
+model Branding {
+  id                  String   @id @default(cuid())
+  tenantId            String   @unique
+  tenant              Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  logoLightUrl        String?
+  logoDarkUrl         String?
+  logoClickUrl        String?
+  faviconUrl          String?
+  primaryColorLight   String?
+  primaryColorDark    String?
+  navTextColorLight   String?
+  navTextColorDark    String?
+  navBgColorLight     String?
+  navBgColorDark      String?
+  themePreset         String?  @default("coledia")
+  themeMode           String?
+  authLogoSignUpLight  String?
+  authLogoSignUpDark   String?
+  authLogoSignInLight  String?
+  authLogoSignInDark   String?
+  authLogoForgotLight String?
+  authLogoForgotDark  String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model UserProfile {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  username        String?
+  bio             String?  @db.Text
+  avatarUrl       String?
+  status          String   @default("online")
+  language        String   @default("en")
+  acceptedTermsAt DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model OwnerAccount {
+  id                   String      @id @default(cuid())
+  userId               String      @unique
+  tier                 String      @default("free")
+  stripeCustomerId     String?     @unique
+  stripeSubscriptionId String?     @unique
+  currentPeriodEnd     DateTime?
+  status               String      @default("active")
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
+  user                 User        @relation(fields: [userId], references: [id], onDelete: Restrict)
+  containers           Container[]
+}
+
+model Container {
+  id                   String       @id @default(cuid())
+  ownerId              String
+  tenantId             String       @unique
+  name                 String
+  subdomain            String       @unique
+  customDomain         String?      @unique
+  dokployApplicationId String?      @unique
+  status               String       @default("provisioning")
+  plan                 String       @default("starter")
+  provisionError       String?      @db.Text
+  deletedAt            DateTime?
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+  owner                OwnerAccount @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  tenant               Tenant       @relation(fields: [tenantId], references: [id], onDelete: Restrict)
+
+  @@index([ownerId, status])
+  @@index([deletedAt])
+}

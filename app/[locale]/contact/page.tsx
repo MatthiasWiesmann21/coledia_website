@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Coffee, Mail, MessageCircle } from "lucide-react";
 
+import { MarketingShell } from "@/components/layout/marketing-shell";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Reveal } from "@/components/motion/reveal";
 import { ContactForm } from "@/components/contact/contact-form";
@@ -27,6 +28,7 @@ export default async function ContactPage({
   const t = await getTranslations("contact");
 
   return (
+    <MarketingShell>
     <section className="px-4 pb-20 pt-16 sm:pt-24">
       <Reveal className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-bold uppercase tracking-widest text-teal-brand">
@@ -86,5 +88,6 @@ export default async function ContactPage({
         </Reveal>
       </div>
     </section>
+    </MarketingShell>
   );
 }

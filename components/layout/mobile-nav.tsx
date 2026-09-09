@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Logo } from "@/components/layout/logo";
 import { ThemeSwitcher } from "@/components/layout/theme-switcher";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
+import { SessionNav } from "@/components/auth/session-nav";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
@@ -26,7 +27,7 @@ export function MobileNav() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label={t("toggleMenu")} className="rounded-full lg:hidden">
+        <Button variant="ghost" size="icon" aria-label={t("toggleMenu")} className="rounded-full xl:hidden">
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
@@ -46,6 +47,7 @@ export function MobileNav() {
               {t(item.key)}
             </Link>
           ))}
+          <SessionNav onNavigate={() => setOpen(false)} />
           <Button asChild className="mt-4">
             <Link href="/contact" onClick={() => setOpen(false)}>
               {t("cta")}

@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
+import { MarketingShell } from "@/components/layout/marketing-shell";
 import { Reveal } from "@/components/motion/reveal";
 import { Badge } from "@/components/ui/badge";
 
@@ -31,6 +32,7 @@ export default async function PrivacyPage({
   ];
 
   return (
+    <MarketingShell>
     <section className="px-4 pb-20 pt-16 sm:pt-24">
       <Reveal className="mx-auto max-w-2xl">
         <h1 className="text-4xl font-extrabold tracking-tight">{t("title")}</h1>
@@ -47,5 +49,6 @@ export default async function PrivacyPage({
         </div>
       </Reveal>
     </section>
+    </MarketingShell>
   );
 }

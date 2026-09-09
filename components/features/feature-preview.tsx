@@ -8,7 +8,6 @@ import {
   Heart,
   MessageCircle,
   Play,
-  Radio,
   Repeat2,
   Send,
   Smile,
@@ -551,7 +550,7 @@ function PaymentsPreview() {
       <div className="flex items-center justify-between rounded-xl bg-white/5 px-3 py-2.5">
         <div>
           <p className="text-[7px] text-white/50">Total revenue</p>
-          <p className="text-lg font-bold text-teal-300">CHF 1'284</p>
+          <p className="text-lg font-bold text-teal-300">CHF 1&apos;284</p>
         </div>
         <div className="text-right">
           <p className="text-[7px] text-white/50">This month</p>

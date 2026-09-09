@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 
+import { MarketingShell } from "@/components/layout/marketing-shell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/motion/reveal";
 import { CtaBanner } from "@/components/home/cta-banner";
@@ -38,7 +39,7 @@ export default async function FeaturesPage({
   const t = await getTranslations("featuresPage");
 
   return (
-    <>
+    <MarketingShell>
       <section className="px-4 pt-16 sm:pt-24">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-teal-brand">
@@ -161,6 +162,6 @@ export default async function FeaturesPage({
           note: "",
         }}
       />
-    </>
+    </MarketingShell>
   );
 }
