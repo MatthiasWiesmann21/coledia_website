@@ -1,4 +1,4 @@
-import type { Container, OwnerAccount } from "@prisma/client";
+import type { Container, OwnerAccount } from "@/prisma/generated/client";
 import type { ProvisionResult, ProvisionInput, DeprovisionFn } from "../dokploy/provision";
 import {
   canUseCustomDomain,

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import type { Container, OwnerAccount } from "@prisma/client";
+import type { Container, OwnerAccount } from "../prisma/generated/client";
 import {
   createContainerService,
   type ContainerStore,
