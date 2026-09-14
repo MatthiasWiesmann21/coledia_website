@@ -69,13 +69,16 @@ test("getDokployConfig returns null when unconfigured and config when set", () =
 
 test("buildContainerEnvVars injects TENANT_ID and shared secrets", () => {
   const vars = buildContainerEnvVars(
-    { tenantId: "tenant-123" },
-    { DATABASE_URL: "mysql://localhost", BETTER_AUTH_SECRET: "secret" },
+    { tenantId: "tenant-123", subdomain: "acme" },
+    { DATABASE_URL: "mysql://localhost", BETTER_AUTH_SECRET: "secret", CONTAINER_BASE_DOMAIN: "coledia.com" },
   );
   assert.equal(vars.TENANT_ID, "tenant-123");
   assert.equal(vars.NODE_ENV, "production");
   assert.equal(vars.DATABASE_URL, "mysql://localhost");
   assert.equal(vars.BETTER_AUTH_SECRET, "secret");
+  assert.equal(vars.BETTER_AUTH_URL, "https://acme.coledia.com");
+  assert.equal(vars.NEXT_PUBLIC_APP_URL, "https://acme.coledia.com");
+  assert.equal(vars.STORAGE_PATH, "./uploads");
 });
 
 test("provisionContainer returns mock when enabled and error otherwise", () => {

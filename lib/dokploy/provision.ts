@@ -110,14 +110,28 @@ export function getDeprovisioner(): DeprovisionFn | null {
 }
 
 export function buildContainerEnvVars(
-  input: { tenantId: string },
+  input: { tenantId: string; subdomain: string; customDomain?: string | null },
   env: Record<string, string | undefined> = process.env,
 ): Record<string, string> {
+  const baseDomain = env.CONTAINER_BASE_DOMAIN?.trim() || "coledia.com";
+  const appUrl = input.customDomain
+    ? `https://${input.customDomain}`
+    : `https://${input.subdomain}.${baseDomain}`;
+
   const vars: Record<string, string> = {
     TENANT_ID: input.tenantId,
     NODE_ENV: "production",
+    BETTER_AUTH_URL: appUrl,
+    NEXT_PUBLIC_APP_URL: appUrl,
+    STORAGE_PATH: "./uploads",
   };
   if (env.DATABASE_URL) vars.DATABASE_URL = env.DATABASE_URL;
   if (env.BETTER_AUTH_SECRET) vars.BETTER_AUTH_SECRET = env.BETTER_AUTH_SECRET;
+  if (env.SMTP_HOST) vars.SMTP_HOST = env.SMTP_HOST;
+  if (env.SMTP_PORT) vars.SMTP_PORT = env.SMTP_PORT;
+  if (env.SMTP_USER) vars.SMTP_USER = env.SMTP_USER;
+  if (env.SMTP_PASSWORD) vars.SMTP_PASSWORD = env.SMTP_PASSWORD;
+  if (env.SMTP_FROM) vars.SMTP_FROM = env.SMTP_FROM;
+  if (env.REALTIME_URL) vars.REALTIME_URL = env.REALTIME_URL;
   return vars;
 }

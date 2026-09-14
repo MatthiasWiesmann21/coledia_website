@@ -116,7 +116,13 @@ function fixture(
     store,
     provision,
     deprovision,
-    buildEnvVars: ({ tenantId }) => ({ TENANT_ID: tenantId, NODE_ENV: "production" }),
+    buildEnvVars: ({ tenantId, subdomain, customDomain }) => ({
+      TENANT_ID: tenantId,
+      NODE_ENV: "production",
+      BETTER_AUTH_URL: customDomain ? `https://${customDomain}` : `https://${subdomain}.coledia.com`,
+      NEXT_PUBLIC_APP_URL: customDomain ? `https://${customDomain}` : `https://${subdomain}.coledia.com`,
+      STORAGE_PATH: "./uploads",
+    }),
     now: () => now,
   });
   return { store, service };

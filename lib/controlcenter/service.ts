@@ -64,7 +64,7 @@ export function createContainerService(deps: {
   store: ContainerStore;
   provision: (input: ProvisionInput) => Promise<ProvisionResult>;
   deprovision?: DeprovisionFn | null;
-  buildEnvVars: (input: { tenantId: string }) => Record<string, string>;
+  buildEnvVars: (input: { tenantId: string; subdomain: string; customDomain?: string | null }) => Record<string, string>;
   now?: () => Date;
 }) {
   async function execute(
@@ -86,7 +86,11 @@ export function createContainerService(deps: {
     tx: ContainerTransaction,
     container: Container,
   ) {
-    const envVars = deps.buildEnvVars({ tenantId: container.tenantId });
+    const envVars = deps.buildEnvVars({
+      tenantId: container.tenantId,
+      subdomain: container.subdomain,
+      customDomain: container.customDomain,
+    });
     let result: ProvisionResult;
     try {
       result = await deps.provision({
