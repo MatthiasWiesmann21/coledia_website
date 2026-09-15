@@ -10,7 +10,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Logo } from "@/components/layout/logo";
 import { ThemeSwitcher } from "@/components/layout/theme-switcher";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
-import { SessionNav } from "@/components/auth/session-nav";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
@@ -47,7 +46,6 @@ export function MobileNav() {
               {t(item.key)}
             </Link>
           ))}
-          <SessionNav onNavigate={() => setOpen(false)} />
           <Button asChild className="mt-4">
             <Link href="/contact" onClick={() => setOpen(false)}>
               {t("cta")}

@@ -6,7 +6,6 @@ import { Logo } from "@/components/layout/logo";
 import { ThemeSwitcher } from "@/components/layout/theme-switcher";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { MobileNav } from "@/components/layout/mobile-nav";
-import { SessionNav } from "@/components/auth/session-nav";
 
 const NAV_ITEMS = [
   { key: "home", href: "/" },
@@ -43,7 +42,6 @@ export async function Header() {
             <ThemeSwitcher />
             <LocaleSwitcher />
           </div>
-          <div className="hidden xl:block"><SessionNav /></div>
           <Button asChild className="hidden xl:inline-flex">
             <Link href="/contact">{t("cta")}</Link>
           </Button>
