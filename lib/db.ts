@@ -28,9 +28,7 @@ function createPrismaClient(): PrismaClient {
 function getDb(): PrismaClient {
   if (globalForPrisma.db) return globalForPrisma.db;
   const client = createPrismaClient();
-  if (process.env.NODE_ENV !== "production") {
-    globalForPrisma.db = client;
-  }
+  globalForPrisma.db = client;
   return client;
 }
 
@@ -44,9 +42,9 @@ function getDb(): PrismaClient {
  * client creation to first property access via a Proxy.
  */
 export const db = new Proxy({} as PrismaClient, {
-  get(_target, prop, receiver) {
+  get(_target, prop) {
     const client = getDb();
-    const value = Reflect.get(client, prop, receiver);
+    const value = Reflect.get(client, prop, client);
     return typeof value === "function" ? value.bind(client) : value;
   },
 });
