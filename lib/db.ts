@@ -16,7 +16,9 @@ function createPrismaClient(): PrismaClient {
         "Required by the Prisma MariaDB driver adapter.",
     );
   }
-  const adapter = new PrismaMariaDb(url);
+  const adapterUrl = new URL(url.replace(/^mysql:/, "mariadb:"));
+  adapterUrl.searchParams.set("connectionLimit", process.env.DATABASE_CONNECTION_LIMIT ?? "2");
+  const adapter = new PrismaMariaDb(adapterUrl.toString());
   return new PrismaClientCtor({
     adapter,
     log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
